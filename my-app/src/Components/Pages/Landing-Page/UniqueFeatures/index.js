@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./uniF.module.scss";
 import button from "../CareerPath/career.module.scss"
+import { Link } from "react-router-dom";
 import Scientist from "../../../../Assets/Images/girl-scientist.svg";
 
 
@@ -17,8 +18,9 @@ export const Mission = () => {
                 <h2>Mission</h2>
                 <p>Our mission is to empower secondary students in Nigeris by providing a comprehensive platform that guides them  through the crucial decisions of choosing their academic and career paths.</p>
                 <div>
-
+                <Link to="/SignupPage">
                 <button className={button.register}>Register</button>
+                </Link>
                 </div>
             </div>
 

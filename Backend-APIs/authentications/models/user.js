@@ -55,3 +55,7 @@ function validateUser(user) {
 
 exports.userInfo = userInfo;
 exports.validate = validateUser;
+
+//usermodel testing for post
+// const NewUserModel = mongoose.model("NewUser", userInfo)
+// module.exports = NewUserModel

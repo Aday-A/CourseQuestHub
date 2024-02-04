@@ -18,6 +18,8 @@ function App() {
         <Route exact path="/" element={<LandingPage/>}/>
         <Route path="/HomePage" element={<HomePage/>}/>
         <Route path="/LandingPage" element={<LandingPage/>}/>
+        <Route path="/SignupPage" element={<SignupPage/>}/>
+        <Route path="/LoginPage" element={<LoginPage/>}/>
       </Routes>
     </Router>
   );

@@ -4,7 +4,7 @@ const Joi = require('joi');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
-const { userInfo } = require('../models/user');
+const { userInfo } = require('../../models/user');
 const express = require('express');
 const router = express.Router();
 

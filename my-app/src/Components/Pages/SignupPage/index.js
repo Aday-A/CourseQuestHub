@@ -9,7 +9,7 @@ import { Navbar } from "../../Navbar";
 
 export function SignupPage() {
   return (
-   
+  
     <Container >
       <section>
         <br/>

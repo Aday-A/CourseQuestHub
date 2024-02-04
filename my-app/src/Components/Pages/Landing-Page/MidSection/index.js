@@ -48,6 +48,7 @@ export const MidSection = () => {
           </div>
           <p>Law</p>
         </div>
-      
-      )
+      </div>
+      </div>
+      );
     }

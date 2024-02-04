@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import style from "./nav.module.scss";
 import Logo from "../../Assets/Images/Logo.svg";
+import { Link } from "react-router-dom";
+import { SignupPage } from "../Pages/SignupPage";
+import { LoginPage } from "../Pages/LoginPage";
 
 export const Navbar = () => {
   const [loginData, setLoginData] = useState({ username: "", password: "" });
@@ -42,13 +45,17 @@ export const Navbar = () => {
         <h4>CourseQuestHub</h4>
       </div>
 
-      <div className={style.navButton}>
-        <button className={style.loginButton} onClick={handleLogin}>
+      <div >
+        <Link to="/LoginPage" >
+        <button className={style.navloginButton}>
           Login
         </button>
-        <button className={style.registerButton} onClick={handleRegister}>
+        </Link>
+        <Link to="/SignupPage">
+        <button className={style.navregButton} >
           Register
         </button>
+        </Link>
       </div>
     </div>
   );

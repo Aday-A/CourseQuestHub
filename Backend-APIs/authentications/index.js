@@ -5,10 +5,12 @@ const mongoose = require('mongoose');
 const users = require('./routes/users');
 const auth = require('./routes/auth');
 const login = require('./routes/login');
-const forgotPassword = require('./routes/password-auth/forgot-password');
+const forgotPassword = require('./authentications/routes/password-auth/forgot-password');
 const resetPassword = require('./routes/password-auth/reset-password');
 const express = require('express');
 const app = express();
+const cors = require('cors')
+const NewUserModel = require('./models/user')
 
 
 if (!config.has('PrivateKey')) {
@@ -17,11 +19,11 @@ if (!config.has('PrivateKey')) {
 }
 
 
-mongoose.connect('mongodb://localhost:27017/CourseQuestHub', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('https://localhost:27017/CourseQuestHub', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Now connected to MongoDB!'))
     .catch(err => console.error('Something went wrong', err));
 
-
+app.use(cors())
 app.use(express.json());
 
 // CHANGE THIS URL LINK LATER
@@ -39,3 +41,10 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Hi Thelma, listening now on port ${port}...`));
+
+// Testing post api for Signup
+app.post('/SignupPage', (req,res) =>{
+    NewUserModel.create(req.body)
+    .then(NewUser => res.json(NewUser))
+    .catch(err => res.json(err))
+})
